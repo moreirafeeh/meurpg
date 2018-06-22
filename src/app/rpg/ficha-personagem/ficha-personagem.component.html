@@ -1,0 +1,21 @@
+
+<div class="row" style="opacity:0.8">
+    <div class="col s12 m5">
+      <div class="card-panel teal" style ="border: solid 2px Black; margin-right:-15%;" >
+          <span class="white-text" style = "margin-left:35%; text-decoration:underline;">
+              Personagens Criados
+              </span>
+       <!--  TENTADO OBSERVABLES -->       
+  <button (click) = "clickoumudou()" >CLIKA AQUI</button>
+  <!-- PARANDO DE TESTAR OBSERVABLES-->
+             <div *ngFor = "let persona of personagens">
+                          
+               <app-personagem [persona] = "persona"></app-personagem>
+
+             </div>
+  
+      </div>
+    </div>
+  </div>
+
+  

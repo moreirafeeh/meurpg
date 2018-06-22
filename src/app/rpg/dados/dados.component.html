@@ -1,0 +1,364 @@
+<div style="margin-left:50%; position:absolute; top:10%; width:600px ; background:rgb(49, 49, 49); border:solid 2px Black;opacity:0.8; ">
+             
+                <br><span class="white-text" style = "margin-left:35%; text-decoration:underline;">
+                                  Ficha de Personagem  OLHA AKII   {{recebeValor}}
+                                </span>
+                               
+                <div class="row">
+                                <form class="col s12">
+                                  <div class="row">
+                                    <div class="input-field col s6">
+                                      <i class="material-icons prefix">child_care</i>
+                                      <input id="icon_prefix" type="text" class="validate" name="nome" #nome>
+                                      <div *ngIf = "!nome.valid && nome.touched" > O CAMPO NOME é obrigatório</div>
+                                      <label for="icon_prefix">Nome do Personagem</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                      <i class="material-icons prefix">cake</i>
+                                      <input id="icon_telephone" type="number" class="validate" #idade>
+                                      <label for="icon_telephone">Idade</label>
+                                    </div>
+                                    <!--<div class="input-field col s6">
+                                        <i class="material-icons prefix">library_add</i>
+                                        <input id="icon_telephone" type="text" class="validate" name="cep" (blur) = "consultarcep(cep.value)"  #cep>
+                                        <label for="icon_telephone">CEP</label>
+                                      </div-->
+                                      <!-- CIDADE -->
+                                      <!--<div class="input-field col s6">
+                                          <i class="material-icons prefix">library_add</i>
+                                          <input id="icon_telephone" type="text" class="validate" name="cidade" (blur) = "cidadezinha()" >
+                                          <label for="icon_telephone">CEP</label>
+                                      </div-->
+                                  </div>
+                                  <div class="row">
+                                  
+                                    <select class="browser-default" #selector (change)="0" >
+                          
+                                      <option value="" disabled selected>Selecione Sua Classe:</option>
+                                      
+                                      <option value="1">Arqueiro</option>
+                                      
+                                      <option value="2">Mago</option>
+                                      
+                                      <option value="3">Guerreiro</option>
+                                      
+                                      
+                                      </select>
+                                      
+                                      
+                                      <div style="font-size: 50px; text-align: center;" [style.display]="selector.value== 1? 'block' : 'none'">
+                                                   
+                                           
+                      
+                                          <label><img src="./assets/life.png" style="width:20px;" >Life_Points_{{vida}}/100</label> 
+                                          <div class="progress" style="width: 200px; border:2px solid black; height: 10px; margin-left:30%">
+                                             <div class="determinate"  [style.width.%] = "vida"  style="width: 70%; background-color: rgb(0, 255, 21);"></div>
+                                          </div>
+                                              <img src="./assets/Archer.png" style="width:200px">
+                                              <br>
+                                            
+                                      <div *ngIf = "clicado == 1">        
+                                      <div class="row"> 
+                                          <div class="col s6"> 
+                                              <label><img src="./assets/sword.png" style="width:30px" >Força_{{forca}}/100</label>   
+                                              <div class="progress" style=" width: 200px; border:2px solid black; height: 10px;">
+                                              <div class="determinate" [style.width.%] = "forca"  style="width: 70%; background-color: rgb(0, 255, 21);"></div>
+                                            </div>
+                                          </div>
+                                          <div class="col s6">
+                                              <label><img src="./assets/brain.png" style="width:30px" >Inteligência_{{inteligencia}}/100</label> 
+                                            <div class="progress" style=" width: 200px; border:2px solid black; height: 10px;">
+                                               <div class="determinate"  [style.width.%] = "inteligencia" style="width: 70%; background-color: rgb(0, 255, 21);"></div>
+                                            </div>
+                                        </div>
+                                              
+                                      </div>
+                      
+                                      <div class="row"> 
+                                          <div class="col s6">
+                                              <label><img src="./assets/eye.png" style="width:30px" >Destreza_{{destreza}}/100</label> 
+                                            <div class="progress" style=" width: 200px; border:2px solid black; height: 10px;">
+                                              <div class="determinate" [style.width.%] = "destreza" style="width: 70%; background-color: rgb(0, 255, 21);"></div>
+                                            </div>
+                                          </div>
+                                          <div class="col s6">
+                                              <label><img src="./assets/sab.png" style="width:30px" >Sabedoria_{{sabedoria}}/100</label> 
+                                            <div class="progress" style=" width: 200px; border:2px solid black; height: 10px;">
+                                               <div class="determinate" [style.width.%] = "sabedoria"  style="width: 70%; background-color: rgb(0, 255, 21);  "></div>
+                                            </div>
+                                        </div>
+                                              
+                                      </div>
+                                      <div class="row"> 
+                                          <div class="col s6">   
+                                              <label><img src="./assets/mask.png" style="width:30px" >Carisma_{{carisma}}/100</label> 
+                                            <div class="progress" style=" width: 200px; border:2px solid black; height: 10px;">
+                                              <div class="determinate" [style.width.%] = "carisma" style="width: 70%; background-color: rgb(0, 255, 21);"></div>
+                                            </div>
+                                          </div>
+                                          <div class="col s6">
+                                              <label><img src="./assets/fist.png" style="width:30px" >Resistencia_{{resistencia}}/100</label> 
+                                            <div class="progress" style="width: 200px; border:2px solid black; height: 10px;">
+                                               <div class="determinate"  [style.width.%] = "resistencia"  style="width: 70%; background-color: rgb(0, 255, 21);"></div>
+                                            </div>
+                                        </div>
+                                              
+                                      </div>
+                                    </div>
+                                            <button class="btn waves-effect waves-light" (click) = "aleatorizar(nome.value, idade.value,selector.value)" type="button" name="action">Criar Personagem
+                                              <i class="material-icons right">send</i>
+                                            </button>
+                                     </div> 
+                                      
+                                      <div style="font-size: 50px; text-align: center;" [style.display]="selector.value== 2? 'block' : 'none'">
+
+                                                <label><img src="./assets/life.png" style="width:20px;" >Life_Points_{{vida}}/100</label> 
+                                          <div class="progress" style="width: 200px; border:2px solid black; height: 10px; margin-left:30%">
+                                             <div class="determinate"  [style.width.%] = "vida"  style="width: 70%; background-color: rgb(0, 255, 21);"></div>
+                                          </div>
+
+                                        <img src="./assets/mago.png" style="width:200px">
+                                        <div *ngIf = "clicado == 1">        
+                                            <div class="row"> 
+                                                <div class="col s6"> 
+                                                    <label><img src="./assets/sword.png" style="width:30px" >Força_{{forca}}/100</label>   
+                                                    <div class="progress" style=" width: 200px; border:2px solid black; height: 10px;">
+                                                    <div class="determinate" [style.width.%] = "forca"  style="width: 70%; background-color: rgb(0, 255, 21);"></div>
+                                                  </div>
+                                                </div>
+                                                <div class="col s6">
+                                                    <label><img src="./assets/brain.png" style="width:30px" >Inteligência_{{inteligencia}}/100</label> 
+                                                  <div class="progress" style=" width: 200px; border:2px solid black; height: 10px;">
+                                                     <div class="determinate"  [style.width.%] = "inteligencia" style="width: 70%; background-color: rgb(0, 255, 21);"></div>
+                                                  </div>
+                                              </div>
+                                                    
+                                            </div>
+                            
+                                            <div class="row"> 
+                                                <div class="col s6">
+                                                    <label><img src="./assets/eye.png" style="width:30px" >Destreza_{{destreza}}/100</label> 
+                                                  <div class="progress" style=" width: 200px; border:2px solid black; height: 10px;">
+                                                    <div class="determinate" [style.width.%] = "destreza" style="width: 70%; background-color: rgb(0, 255, 21);"></div>
+                                                  </div>
+                                                </div>
+                                                <div class="col s6">
+                                                    <label><img src="./assets/sab.png" style="width:30px" >Sabedoria_{{sabedoria}}/100</label> 
+                                                  <div class="progress" style=" width: 200px; border:2px solid black; height: 10px;">
+                                                     <div class="determinate" [style.width.%] = "sabedoria"  style="width: 70%; background-color: rgb(0, 255, 21);  "></div>
+                                                  </div>
+                                              </div>
+                                                    
+                                            </div>
+                                            <div class="row"> 
+                                                <div class="col s6">   
+                                                    <label><img src="./assets/mask.png" style="width:30px" >Carisma_{{carisma}}/100</label> 
+                                                  <div class="progress" style=" width: 200px; border:2px solid black; height: 10px;">
+                                                    <div class="determinate" [style.width.%] = "carisma" style="width: 70%; background-color: rgb(0, 255, 21);"></div>
+                                                  </div>
+                                                </div>
+                                                <div class="col s6">
+                                                    <label><img src="./assets/fist.png" style="width:30px" >Resistencia_{{resistencia}}/100</label> 
+                                                  <div class="progress" style="width: 200px; border:2px solid black; height: 10px;">
+                                                     <div class="determinate"  [style.width.%] = "resistencia"  style="width: 70%; background-color: rgb(0, 255, 21);"></div>
+                                                  </div>
+                                              </div>
+                                                    
+                                            </div>
+                                          </div>
+                                          <br> <button class="btn waves-effect waves-light" (click) = "aleatorizar(nome.value, idade.value,selector.value)" type="button" name="action">Criar Personagem
+                                              <i class="material-icons right">send</i>
+                                            </button>
+                                      </div>
+                                      
+                                      <div style="font-size: 50px; text-align: center;" [style.display]="selector.value== 3? 'block' : 'none'">
+                                              
+                                                <label><img src="./assets/life.png" style="width:20px;" >Life_Points_{{vida}}/100</label> 
+                                                <div class="progress" style="width: 200px; border:2px solid black; height: 10px; margin-left:30%">
+                                                   <div class="determinate"  [style.width.%] = "vida"  style="width: 70%; background-color: rgb(0, 255, 21);"></div>
+                                                </div>
+
+
+                                        <img src="./assets/guerreiro.png" style="width:200px">
+                                        <div *ngIf = "clicado == 1">        
+                                            <div class="row"> 
+                                                <div class="col s6"> 
+                                                    <label><img src="./assets/sword.png" style="width:30px" >Força_{{forca}}/100</label>   
+                                                    <div class="progress" style=" width: 200px; border:2px solid black; height: 10px;">
+                                                    <div class="determinate" [style.width.%] = "forca"  style="width: 70%; background-color: rgb(0, 255, 21);"></div>
+                                                  </div>
+                                                </div>
+                                                <div class="col s6">
+                                                    <label><img src="./assets/brain.png" style="width:30px" >Inteligência_{{inteligencia}}/100</label> 
+                                                  <div class="progress" style=" width: 200px; border:2px solid black; height: 10px;">
+                                                     <div class="determinate"  [style.width.%] = "inteligencia" style="width: 70%; background-color: rgb(0, 255, 21);"></div>
+                                                  </div>
+                                              </div>
+                                                    
+                                            </div>
+                            
+                                            <div class="row"> 
+                                                <div class="col s6">
+                                                    <label><img src="./assets/eye.png" style="width:30px" >Destreza_{{destreza}}/100</label> 
+                                                  <div class="progress" style=" width: 200px; border:2px solid black; height: 10px;">
+                                                    <div class="determinate" [style.width.%] = "destreza" style="width: 70%; background-color: rgb(0, 255, 21);"></div>
+                                                  </div>
+                                                </div>
+                                                <div class="col s6">
+                                                    <label><img src="./assets/sab.png" style="width:30px" >Sabedoria_{{sabedoria}}/100</label> 
+                                                  <div class="progress" style=" width: 200px; border:2px solid black; height: 10px;">
+                                                     <div class="determinate" [style.width.%] = "sabedoria"  style="width: 70%; background-color: rgb(0, 255, 21);  "></div>
+                                                  </div>
+                                              </div>
+                                                    
+                                            </div>
+                                            <div class="row"> 
+                                                <div class="col s6">   
+                                                    <label><img src="./assets/mask.png" style="width:30px" >Carisma_{{carisma}}/100</label> 
+                                                  <div class="progress" style=" width: 200px; border:2px solid black; height: 10px;">
+                                                    <div class="determinate" [style.width.%] = "carisma" style="width: 70%; background-color: rgb(0, 255, 21);"></div>
+                                                  </div>
+                                                </div>
+                                                <div class="col s6">
+                                                    <label><img src="./assets/fist.png" style="width:30px" >Resistencia_{{resistencia}}/100</label> 
+                                                  <div class="progress" style="width: 200px; border:2px solid black; height: 10px;">
+                                                     <div class="determinate"  [style.width.%] = "resistencia"  style="width: 70%; background-color: rgb(0, 255, 21);"></div>
+                                                  </div>
+                                              </div>
+                                                    
+                                            </div>
+                                          </div>
+                                          <br> <button class="btn waves-effect waves-light" (click) = "aleatorizar(nome.value, idade.value,selector.value)" type="button" name="action">Criar Personagem
+                                              <i class="material-icons right">send</i>
+                                            </button>
+                                      </div>
+                                      
+                                    </div>
+                                </form>
+                              </div>
+
+
+</div>
+
+<!--
+<select class="browser-default" #selector (change)="0" >
+  
+    <option value="" disabled selected>Selecione o Dado:</option>
+    
+    <option value="1">Dado com 4 lados</option>
+    
+    <option value="2">Dado com 6 lados</option>
+    
+    <option value="3">Dado com 10 lados</option>
+    
+    <option value="4">Dado com 12 lados</option>
+    
+    <option value="5">Dado com 20 lados</option>
+    
+    <option value="6">Dado com 100 lados</option>
+    
+    </select>
+    
+    <p style="font-size: 50px; text-align: center;" [style.display]="selector.value== 1? 'block' : 'none'">
+
+            <img src="./assets/dado4.png" style="width:200px">
+            
+            <label>Quantidade de Dados</label>
+     <input  #quantidade1  type="number" style="width: 200px"> 
+   
+    <button (click) = "dado4(quantidade1.value)" class="btn waves-effect waves-light" type="submit" name="action">Lançar
+            <i class="material-icons right">send</i>
+          </button>
+    </p> 
+    
+    <p style="font-size: 50px; text-align: center;" [style.display]="selector.value== 2? 'block' : 'none'">
+    
+            <img src="./assets/dado6.png" style="width:200px">
+            
+            <label>Quantidade de Dados</label>
+     <input  #quantidade2  type="number" style="width: 200px"> 
+   
+    <button (click) = "dado6(quantidade2.value)" class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+          </button>
+    
+    </p>
+    
+    <p style="font-size: 50px; text-align: center;" [style.display]="selector.value== 3? 'block' : 'none'"> 
+    
+            <img src="./assets/dado10.png" style="width:200px">
+            
+            <label>Quantidade de Dados</label>
+     <input  #quantidade3  type="number" style="width: 200px"> 
+   
+    <button (click) = "dado10(quantidade3.value)" class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+          </button>
+    
+    </p>
+    
+    <p style="font-size: 50px; text-align: center;" [style.display]="selector.value== 4? 'block' : 'none'"> 
+    
+            <img src="./assets/dado12.png" style="width:200px">
+            
+            <label>Quantidade de Dados</label>
+     <input  #quantidade4  type="number" style="width: 200px"> 
+   
+    <button (click) = "dado12(quantidade4.value)" class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+          </button>
+    
+    </p>
+    
+    <p style="font-size: 50px; text-align: center;" [style.display]="selector.value== 5? 'block' : 'none'"> 
+    
+            <img src="./assets/dado20.png" style="width:200px">
+            
+            <label>Quantidade de Dados</label>
+     <input  #quantidade5  type="number" style="width: 200px"> 
+   
+    <button (click) = "dado20(quantidade5.value)" class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+          </button>
+    
+    </p>
+    
+    <p style="font-size: 50px; text-align: center;" [style.display]="selector.value== 6? 'block' : 'none'"> 
+    
+            <img src="./assets/dado100.png" style="width:200px">
+            
+            <label>Quantidade de Dados</label>
+     <input  #quantidade6  type="number" style="width: 200px"> 
+   
+    <button (click) = "dado100(quantidade6.value)" class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+          </button>
+    
+    </p>
+-->
+    
+
+<footer class="#004d40 teal darken-4"  >
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="black-text" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif" >Junte-se nessa Aventura</h5>
+        <p class="grey-text text-lighten-4" style= "margin-left:50%"><img src="./assets/ragnarok3.png" style="width:1550px;height:400px;margin-left:-500px; margin-top: -60px; margin-bottom: -50px "></p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+      
+        <ul>
+         
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright" style="background-color:rgba(3, 90, 10, 0.952)">
+    <div class="container">
+    © 2018 Copyright Text
+    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
+</footer>
+    
+  

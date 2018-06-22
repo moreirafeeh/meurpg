@@ -1,0 +1,157 @@
+
+<body style=" background-image: url('./assets/fundocadastro5.jpg');width:100%; height:800px; margin-top: 0%; ">
+  <div style=" opacity:0.7;background-color:rgb(62, 72, 129); height:750px; border: 2px solid black; opacity:0.8; width:700px; margin-left:25%; position: relative; top:2% ">
+    <div class="row">
+      <h3 class="col s12" style="text-align:center;font-weight:bold;text-decoration:underline; font-family:fantasy;"  >Cadastro</h3>
+    
+
+         <form class ="s12" #f ="ngForm" (ngSubmit) = "onSubmit(f.value)">
+            <div class="row">
+              <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input #nome = "ngModel" type="text" class="validate" name="nome" [(ngModel)] = "usuario.nome"  required minlength="3" />
+                <label for="icon_prefix">Nome</label>
+                <div *ngIf="!nome.valid && nome.touched">
+                    <div  style="color:red;display:inline;font-size:10px; font-weight:bold" >Nome é OBRIGATÓRIO!!</div>
+                </div>
+                <!--div>
+                  {{nome.className}}
+                </div-->
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">account_box</i>
+                <input #sobrenome = "ngModel" type="text" class="validate" name="sobrenome" [(ngModel)] = "usuario.sobrenome" required minlength="3"/>
+                <label for="icon_telephone">Sobrenome</label>
+                <div *ngIf="!sobrenome.valid && sobrenome.touched">
+                    <div  style="color:red;display:inline;font-size:10px; font-weight:bold" >Sobrenome é OBRIGATÓRIO!!</div>
+                   </div>
+              </div>
+            </div>
+
+            <div class="row">
+
+                <div class="input-field col s4">
+                    <i class="material-icons prefix">call</i>
+                    <input #senha = "ngModel"  type="text" class="validate" name="senha" [(ngModel)] = "usuario.senha" required minlength="10">
+                    <label for="icon_prefix">Senha</label>
+                    <div *ngIf="!senha.valid && senha.touched">
+                        <div  style="color:red;display:inline;font-size:10px;font-weight:bold" >Telefone é OBRIGATÓRIO!!</div>
+                       </div>
+                  </div>
+
+                <div class="input-field col s4">
+                  <i class="material-icons prefix">call</i>
+                  <input #telefone = "ngModel"  type="text" class="validate" name="tel" [(ngModel)] = "usuario.tel" required minlength="10" pattern="^[0-9]*$"/>
+                  <label for="icon_prefix">Telefone</label>
+                  <div *ngIf="!telefone.valid && telefone.touched">
+                      <div  style=" width:23px;color:red;display:inline;font-size:10px;font-weight:bold" >Telefone é OBRIGATÓRIO!!</div>
+                     </div>
+                </div>
+                <div class="input-field col s4">
+                    <i class="material-icons prefix">child_care</i>
+                    <input #data = "ngModel" type="tel" class="validate" name="data" [(ngModel)] = "usuario.data" required pattern="^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$" />
+                    <label for="icon_telephone">Data De Nascimento</label>
+                    <div *ngIf="!data.valid && data.touched">
+                        <div  style="color:red;display:inline;font-size:10px; font-weight:bold" >Data é OBRIGATÓRIO!!</div>
+                       </div>
+                  </div>
+                
+              </div>
+
+              <div class="row">
+
+                  <div class="input-field col s6">
+                      <i class="material-icons prefix">person_pin_circle</i>
+                      <input #cep = "ngModel"  type="text" class="validate" name="cep" [(ngModel)] = "usuario.cep" (blur) ="consultaCEP(cep.value, f)" required  maxlength="8"  maxlength="9"   pattern="[0-9]{5}-[0-9]{3}"/>
+                      <label for="icon_prefix">CEP</label>
+                    </div>
+                    <p>GENERO</p>
+                   
+                  <div class="col s6" style="background-color:rgb(47, 35, 97); border:solid 2px black; width:300px">
+                      
+                      <div class="col s4">
+                        <input #genero = "ngModel" id="icon_prefix_F" name="sexo" type="radio"  value="Feminino" [(ngModel)] = "usuario.sexo" required>
+                        <label for="icon_prefix_F">Feminino</label>
+                      </div>
+                      <div class="col s4">
+                        <input  #genero2 = "ngModel" id="icon_prefix_M" name="sexo" type="radio" value="Masculino" [(ngModel)] = "usuario.sexo" required >
+                        <label for="icon_prefix_M">Marculino</label>
+                      </div>
+                      <div *ngIf="!genero.touched || !genero2.touched ">
+                          <div  style="color:red;display:inline;font-size:10px; font-weight:bold" ><br><br>Genero é OBRIGATÓRIO!!</div>
+                      </div>     
+                    </div>
+                 </div>
+                    
+
+
+              <div class="row">
+                  
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">pin_drop</i>
+                        <input style="color:rgb(238, 186, 235)"  #rua = "ngModel"  type="text" class="validate" name="rua" [(ngModel)] = "usuario.rua" />
+                        <label for="icon_prefix"></label>
+                       
+                      </div>
+                      <div class="input-field col s6">
+                          <i class="material-icons prefix">pin_drop</i>
+                          <input style="color:rgb(238, 186, 235)"   #bairro = "ngModel"  type="text" class="validate" name="bairro" [(ngModel)] = "usuario.bairro" />
+                          <label for="icon_prefix"></label>
+                         
+                        </div>
+                        
+                  </div>  
+                  
+                  <div class="row">
+
+                      <div class="input-field col s5">
+                          <i class="material-icons prefix">place</i>
+                          <input style="color:rgb(238, 186, 235)"  #estado = "ngModel"  type="text" class="validate" name="estado" [(ngModel)] = "usuario.estado" />
+                          <label for="icon_prefix"></label>
+                         
+                        </div>
+
+                        <div class="input-field col s5">
+                            <i class="material-icons prefix">place</i>
+                            <input  style="color:rgb(238, 186, 235)"  #cidade = "ngModel"  type="text" class="validate" name="cidade" [(ngModel)] = "usuario.cidade" />
+                            <label for="icon_prefix"></label>
+                           
+                          </div>
+
+                        <div class="input-field col s2">
+                            <i class="material-icons prefix">play_for_work</i>
+                            <input #estado = "ngModel"  type="text" class="validate" name="numero" [(ngModel)] = "usuario.numero" required />
+                            <label for="icon_prefix">Numero</label>
+                           
+                          </div>
+
+
+                  </div>
+  
+                <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">mail_outline</i>
+                    <input #email = "ngModel"  type="text" class="validate" name="email" [(ngModel)] = "usuario.email" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"/>
+                    <label for="icon_prefix">Email</label>
+
+                    <div *ngIf="!email.valid && email.touched">
+                        <div  style=" width:23px;color:red;display:inline;font-size:10px; font-weight:bold" >Coloque um email valido</div>
+                       </div>
+                   
+                  </div>
+                </div>   
+
+
+                <button  [disabled] = "!f.valid" style="margin-left: 200px;  margin-top:-50px;" class="btn waves-effect waves-light" type="submit" name="action">Cadastrar
+                    <i class="material-icons right">send</i>
+                  </button>
+
+          </form>
+
+          
+
+            <img src="./assets/algoz.png" style="width:200px; margin-top:-10%" >
+
+    </div>
+  </div>
+</body>

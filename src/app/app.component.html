@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="background-image: url('./assets/textura2.jpg')">
+<nav   class ="#1a237e indigo darken-4" style="opacity:0.9">
+        <div class="nav-wrapper">
+          <a routerLink ="" class="brand-logo center"><img src="assets/ded2.png" style="width: 120px"> <img src= "./assets/deviling.gif" style="width:100px; margin-left:250%"></a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a routerLink="/sobre">Sobre</a></li>
+            <li><a routerLink="/livros">Livros</a></li>
+            <li *ngIf = "mostraMenu == true"><a routerLink="/DeD">Crie Seu Personagem</a></li>
+            <li *ngIf = "mostraMenu == true" ><a routerLink="/Mapa">Adventure-Map</a></li>
+            <!--li *ngIf = "mostraMenu == true"><a routerLink="/cadastro">Cadastro</a></li-->
+            <li *ngIf = "mostraMenu == false"><a routerLink="/login">Login</a></li>
+          </ul>
+        </div>
+      </nav>
+</div>
+      <router-outlet></router-outlet>
+

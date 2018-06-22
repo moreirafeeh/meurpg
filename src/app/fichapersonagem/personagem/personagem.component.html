@@ -1,0 +1,79 @@
+<table [style.background-color] = "cor" (mouseover) = "mudacor()" (mouseout)="mudacor2()" >
+  <thead>
+
+    <tr>
+        <th>Nome</th>
+        <th>Classe</th>
+        <th>Atributos</th>
+        <th>Itens</th>
+    </tr>
+
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><button  class="pulse" type="button" (click) = "selecionarPersonagem(persona.nome)" routerLink="/Mapa" >{{persona.nome}}</button></td>
+      <td><div *ngIf = "persona.classe == 1">
+           <p style= "text-decoration:underline">Archer</p>
+          <img src="./assets/Archer.png" style = "width: 100px">
+        </div>
+        <div *ngIf = "persona.classe == 2">
+            <p style= "text-decoration:underline">Magician</p>
+           <img src="./assets/mago.png" style = "width: 100px">
+         </div>
+         <div *ngIf = "persona.classe == 3">
+            <p style= "text-decoration:underline">Warrior</p>
+           <img src="./assets/guerreiro.png" style = "width: 150px">
+         </div>
+        </td>
+      <td><table>
+          <thead>
+
+            <tr>
+                <th> <img src="./assets/brain.png" style="width:20px" >Inteligencia: {{persona.inteligencia}}</th>
+            </tr>
+            <tr>
+                <th><img src="./assets/sword.png" style="width:20px" >Forca: {{persona.forca}}</th>
+            </tr>
+            <tr>
+                <th><img src="./assets/eye.png" style="width:20px" >Destreza: {{persona.destreza}}</th>
+            </tr>
+            <tr>
+                <th><img src="./assets/sab.png" style="width:20px" >Sabedoria: {{persona.sabedoria}}</th>
+            </tr>
+            <tr>
+                <th><img src="./assets/mask.png" style="width:20px" >Carisma: {{persona.carisma}}</th>
+            </tr>
+            <tr>
+                <th><img src="./assets/fist.png" style="width:20px" >Resistencia: {{persona.resistencia}}</th>
+            </tr>
+            <tr>
+                <th><img src="./assets/life.png" style="width:20px" >Vida: {{persona.vida}}</th>
+            </tr>
+            
+
+          </thead>
+  
+          <tbody>
+  
+          </tbody>
+        </table></td>
+
+        <td>
+
+            <img  src="assets/hppotion.png" style="height:30px">
+            <div>{{itens[0].nome}} </div>
+            <img  src="assets/destreza.png" style="height:30px">
+            <div>{{itens[1].nome}} </div>
+            <img  src="assets/resistencia.png" style="height:30px">
+            <div>{{itens[2].nome}} </div>
+            <img  src="assets/forca.png" style="height:30px">
+            <div>{{itens[3].nome}} </div>
+
+
+        </td>
+
+    </tr>
+    
+  </tbody>
+</table>

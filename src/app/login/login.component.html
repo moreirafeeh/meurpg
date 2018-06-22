@@ -1,0 +1,37 @@
+
+<body  style="background-image: url('./assets/loginimage.jpg'); width:100%; height:800px; margin-top: 0%; ">
+
+  <div style=" background-color:rgb(62, 72, 129); height:500px; border: 2px solid black; opacity:0.8; width:500px; margin-left:30%; position: relative; top:30%">
+
+      <h2 style="text-align:center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Login</h2>
+
+      <div class="row">
+          
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">account_circle</i>
+                <input [(ngModel)]="usuario.email" id="user" type="text" class="validate">
+                <label for="user">Usuário</label>
+              </div>
+              <div class="input-field col s12">
+                <i class="material-icons prefix">vpn_key</i>
+                <input [(ngModel)]= "usuario.senha" id="password" type="password" class="validate">
+                <label for="password">Senha</label>
+              </div>
+            </div>
+          
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" (click) = "fazerLogin()" name="action" style="margin-top:-30px; margin-left:180px">Logar
+            <i class="material-icons right">send</i>
+          </button>
+
+       <img src="./assets/loginfundo.png" style="width:200px; margin-top:-1px; margin-left: 150px; " >
+       
+       <p style="margin-top:-30px;"><a routerLink="/cadastro" style = "color:rgb(20, 190, 220); font-weight: bold;"> Crie sua conta!! :D</a></p>
+      </div>
+
+
+<app-snackbar></app-snackbar>
+
+</body>
+

@@ -1,0 +1,103 @@
+<div style ="background-image: url('./assets/oftherings.jpg');  background-repeat: repeat-0; ">
+
+<div *ngIf = "recebe == 0" >
+<br><br><br><br><div class="container"  style="opacity: 0.9">
+      <img src ="./assets/ded.png" style="width: 400px; margin-left:30%;">
+    <p style= "font-style: oblique; background-color:rgb(11, 116, 55); border: solid 2px Black">Dungeons & Dragons (abreviado como D&D ou DnD) é um RPG de alta fantasia desenvolvido originalmente por Gary Gygax e Dave Arneson, 
+  e publicado pela primeira vez em 1974 nos Estados Unidos pela TSR, Inc.,
+  empresa de Gary Gygax. Hoje o jogo é publicado pela Wizards of the Coast. 
+  Suas origens são os wargames de miniaturas (principalmente o Chainmail). 
+  A publicação do D&D é considerada como a origem dos RPGs modernos e foi lançada no Brasil pela Grow e em Portugal pela Sociedade Tipográfica S.A.[1]
+
+  Jogadores de D&D criam personagens que embarcam em aventuras imaginárias em que eles enfrentam monstros, reúnem tesouros, 
+  interagem entre si e ganham pontos de experiência para se tornarem incrivelmente poderosos à medida que o jogo avança.
+  O D&D se destaca dos wargames tradicionais por permitir que cada jogador controle um personagem específico, ao invés de um exército. 
+  Miniaturas ou marcadores em um tabuleiro quadriculado são usados ocasionalmente para representar esses personagens. 
+  O D&D também apresentou o conceito de Mestre de Jogo (Dungeon Master ou DM, no original), que atua como juiz e narrador 
+  e é responsável por manter o cenário ficcional do jogo e aplicar as regras a cada situação descrita.
+  <br><img src="./assets/role.jpg"  style="margin-left:30%; "> 
+ <br>
+
+  <Button (click) = "acrescentar()" style="margin-left: 40%" >Proximo</Button>
+
+    </p>
+  
+   </div>
+</div>
+
+<div  *ngIf = "recebe == 1">
+<br><br><br><br><div class="container"  style="opacity: 0.9">
+   <img src ="./assets/ded.png" style="width: 400px; margin-left:30%;">
+      <p style= "font-style: oblique; background-color:rgb(11, 116, 55); border: solid 2px Black">Regra básica: LEIA MUITO. Jogar RPG de mesa exige certo estudo.
+         Principalmente se você for mestrar a partida. Vá por mim: pausar toda hora para ver as regras acaba com o divertimento. 
+         É normal parar pra ler detalhes e lembrar de coisas, mas você precisa saber o mínimo suficiente pra ter uma sessão de RPG decente.
+        Crie uma história: Qual será a missão do grupo de aventureiros? Salvar uma princesa de um mago sinistro? Resolver um problema diplomático entre dois reinos? 
+        Roubar os planos da estrela da morte? Tente pensar em uma história que tenha reviravoltas, traições e plot-twists pelo caminho.
+        Crie etapas pelas quais os jogadores irão passar até chegar no final da aventura.
+         Pense nas armadilhas e inimigos que estarão em cada sala, assim como os tesouros que eles poderão pilhar pelo caminho. 
+         E não se desespere se os jogadores quiserem ir para a direção oposta. Seja criativo! pense em pequenas side-quests caso os jogadores 
+         se desviarem do caminho e que até possa os trazer de volta a história principal. E aquela frase super clichê: “o importante é a diversão!”
+<br><img src="./assets/role.jpg"  style="margin-left:30%; ">
+
+<br>
+<Button (click) = "decrementar()" style="margin-left: 25%">Anterior</Button>
+
+<Button (click) = "acrescentar()" style = "margin-left: 27%">Proximo</Button> 
+
+
+      </p>
+
+   </div>
+</div>
+
+<div  *ngIf = "recebe == 2">
+  <br><br><br><br><div class="container"  style="opacity: 0.9">
+     <img src ="./assets/ded.png" style="width: 400px; margin-left:30%;">
+        <div style= "font-style: oblique; background-color:rgb(11, 116, 55); border: solid 2px Black">
+              
+            Se a partida for na casa do mestre, os jogadores levam as comidas.
+            Não interrompa a partida para falar da atual situação sócio-econômica dos países do cone-sul.
+            Não fique no facebook. Isso acaba com a diversão e você vai perder partes da história.
+            Não traga um jogador novo sem antes avisar para o grupo e o mestre
+            Se for beber cerveja, é bom combinar anteriormente. RPG nem sempre fica bom com todo mundo bêbado (acredite em mim!)
+            Se for ter um compromisso e não puder participar da próxima sessão, avise o quanto antes para o mestre se planejar.
+            Antes de ir embora, ajude o anfitrião a arrumar a bagunça.
+            Se divirta!
+  <br><img src="./assets/role.jpg"  style="margin-left:30%; ">
+  
+  <br>
+  <Button (click) = "decrementar()" style="margin-left: 25%">Anterior</Button>
+  
+        </div>
+  
+     </div>
+  </div>
+<br>
+  <footer class="#004d40 teal darken-4" style="opacity:0.9;" >
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="black-text" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Junte-se nessa Aventura</h5>
+            <p class="grey-text text-lighten-4" style= "margin-left:50%"><img src="./assets/ajudinha.png" style="float:left;margin-left:-500px; width:400px; margin-top:-50px; margin-bottom:-22px "></p>
+          </div>
+
+          <div class="col l4 offset-l2 s12">
+        
+            <div id="balao">
+
+              <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"> Gostaria de aprender mais Sobre esse jogo??, HAHA , se ficou interessado,lhe mostrarei mais :D</p>  
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright" style="background-color:rgba(3, 90, 10, 0.952)">
+        <div class="container">
+        © 2018 Copyright Text
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>
+
+</div> 

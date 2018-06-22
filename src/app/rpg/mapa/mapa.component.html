@@ -1,0 +1,222 @@
+<div style ="background-image: url('./assets/mapa2.jpg'); background-repeat: repeat-1; ">
+<img src="./assets/gamemap.png">
+
+<footer class="#004d40 teal darken-4" style="opacity:0.9 ;" >
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12" >
+            <table style="position: relative; margin-left: -40%;">
+                <thead>
+
+                  <tr>
+                      <th>Nome</th>
+                      <th>Atributos</th>
+                      <th>Itens</th>
+                  </tr>
+
+                </thead>
+        
+                <tbody>
+                  <tr>
+                    
+                    <td><div *ngIf = "classe == 1">
+                         <p style= "text-decoration:underline">Archer</p>
+                        <img src="./assets/Archer.png" style = "width: 100px">
+                      </div>
+                      <div *ngIf = "classe == 2">
+                          <p style= "text-decoration:underline">Magician</p>
+                         <img src="./assets/mago.png" style = "width: 100px">
+                       </div>
+                       <div *ngIf = "classe == 3">
+                          <p style= "text-decoration:underline">Warrior</p>
+                         <img src="./assets/guerreiro.png" style = "width: 150px">
+                       </div>
+                      </td>
+                    <td><table>
+                        <thead>
+    
+                          <tr>
+                              <th> <img src="./assets/brain.png" style="width:20px" >Inteligencia: {{inteligencia}}</th>
+                          </tr>
+                          <tr>
+                              <th><img src="./assets/sword.png" style="width:20px" >Forca: {{forca}}</th>
+                          </tr>
+                          <tr>
+                              <th><img src="./assets/eye.png" style="width:20px" >Destreza: {{destreza}}</th>
+                          </tr>
+                          <tr>
+                              <th><img src="./assets/sab.png" style="width:20px" >Sabedoria: {{sabedoria}}</th>
+                          </tr>
+                          <tr>
+                              <th><img src="./assets/mask.png" style="width:20px" >Carisma: {{carisma}}</th>
+                          </tr>
+                          <tr>
+                              <th><img src="./assets/fist.png" style="width:20px" >Resistencia: {{resistencia}}</th>
+                          </tr>
+                          <tr>
+                              <th> 
+                                <label><img src="./assets/life.png" style="width:30px" >Life_Points{{vida}}/100</label> 
+                                <div class="progress" style=" width: 200px; border:2px solid black; height: 10px;">
+                                  <div class="determinate" [style.width.%] = "porcentagem" style="width: 70%; background-color: rgb(0, 255, 21);"></div>
+                                </div></th>
+                          </tr>
+    
+                        </thead>
+                
+                        <tbody>
+                
+                        </tbody>
+                      </table></td>
+
+                      <td>
+                        <img  src="assets/hppotion.png" style="height:30px">
+                        <div>{{itens[0].nome}}</div>
+                        <img  src="assets/destreza.png" style="height:30px">
+                        <div>{{itens[1].nome}}</div>
+                        <img  src="assets/resistencia.png" style="height:30px">
+                        <div>{{itens[2].nome}}</div>
+                        <img  src="assets/forca.png" style="height:30px">
+                        <div>{{itens[3].nome}}</div>
+                      </td>
+
+                  </tr>
+                  
+                </tbody>
+              </table>   
+
+              
+
+              <table style="position: relative; margin-left: 145%; margin-top: -112%">
+                <thead>
+
+                  <tr>
+                      <th>Nome</th>
+                      <th>Atributos</th>
+                  </tr>
+
+                </thead>
+        
+                <tbody>
+                  <tr>
+                    
+                    <td>
+                        
+                            <div *ngIf = "idM == 0">
+                                <p style= "text-decoration:underline">Amaradon</p>
+                               <img src="./assets/rag1.gif" style = "width: 200px">
+                             </div>
+                             <div *ngIf = "idM == 1">
+                                <p style= "text-decoration:underline">Valkiria</p>
+                                <img src="./assets/valk.gif_c200" style = "width: 200px">
+                              </div>
+                              <div *ngIf = "idM == 2">
+                                  <p style= "text-decoration:underline">Poring</p>
+                                <img src="./assets/poring.gif_c200" style = "width: 150px">
+                              </div>
+                              <div *ngIf = "idM == 3">
+                                  <p style= "text-decoration:underline">Senhor do Mortos</p>
+                                 <img src="./assets/lordof.gif_c200" style = "width: 200px">
+                               </div>
+                               <div *ngIf = "idM == 4">
+                                  <p style= "text-decoration:underline">Ente</p>
+                                 <img src="./assets/arvore.gif" style = "width: 200px">
+                               </div>
+                               <div *ngIf = "idM == 5">
+                                <p style= "text-decoration:underline">Tuminus</p>
+                               <img src="./assets/satan.gif" style = "width: 200px">
+                               </div>
+                               <div *ngIf = "idM == 6">
+                                <p style= "text-decoration:underline">Samurai Encarnado</p>
+                                <img src="./assets/samurai.gif" style = "width: 200px">
+                               </div>
+                               <div *ngIf = "idM == 7">
+                                <p style= "text-decoration:underline">Papai Cruel</p>
+                               <img src="./assets/noel.gif" style = "width: 200px">
+                               </div>
+                               <div *ngIf = "idM == 8">
+                                <p style= "text-decoration:underline">Ego do Pesadelo</p>
+                               <img src="./assets/rei.gif" style = "width: 200px">
+                               </div>
+                               <div *ngIf = "idM == 9">
+                                <p style= "text-decoration:underline">Gula</p>
+                               <img src="./assets/ghost.gif" style = "width: 200px">
+                               </div>
+                               <div *ngIf = "idM == -1">
+                                  
+                               </div>
+                            
+                            
+                      </td>
+                    <td><table>
+                        <thead>
+                             
+                          <tr>
+                              <th> <img src="./assets/brain.png" style="width:20px" >Inteligencia: {{inteligenciaM}}</th>
+                          </tr>
+                          <tr>
+                              <th><img src="./assets/sword.png" style="width:20px" >Forca: {{forcaM}}</th>
+                          </tr>
+                          <tr>
+                              <th><img src="./assets/eye.png" style="width:20px" >Destreza: {{destrezaM}}</th>
+                          </tr>
+                          <tr>
+                              <th><img src="./assets/sab.png" style="width:20px" >Sabedoria: {{sabedoriaM}}</th>
+                          </tr>
+                          <tr>
+                              <th><img src="./assets/mask.png" style="width:20px" >Carisma: {{carismaM}}</th>
+                          </tr>
+                          <tr>
+                              <th><img src="./assets/fist.png" style="width:20px" >Resistencia: {{resistenciaM}}</th>
+                          </tr>
+
+                          <tr>
+                              <th>
+                              
+                                 <label><img src="./assets/life.png" style="width:30px" >Life_Points{{vidaM}}/{{vidaTotalM}}</label> 
+                                <div class="progress" style=" width: 200px; border:2px solid black; height: 10px;">
+                                  <div class="determinate" [style.width.%] = "porcentagemM" style="width: 70%; background-color: rgb(0, 255, 21);"></div>
+                                </div>
+
+                              </th>
+                          </tr>
+    
+                        </thead>
+                
+                        <tbody>
+                
+                        </tbody>
+                      </table></td>
+
+                  </tr>
+                  
+                </tbody>
+              </table>   
+
+          <p class="grey-text text-lighten-4" style= "margin-left:50%"><img src="./assets/Vs.png" style="margin-left:50%; width: 200px; position:relative; margin-top: -70%; "></p>
+         <br>
+
+         
+         <a class="waves-effect waves-light btn" type="button" style="margin-left: -20%; margin-top: -45%" (click) = "atacar()" >Atacar<i class="material-icons left">cloud</i></a>
+         <a class="waves-effect waves-light btn" type="button" style="margin-left: 0%; margin-top: -45%" (click) = "rajadadeFlechas()" >Rajada_de_Flechas<i class="material-icons left">cloud</i></a>
+         <a class="waves-effect waves-light btn" type="button" style="margin-left: -90%; margin-top: -25%" (click) = "fugir()" >Fugir!!<i class="material-icons left">cloud</i></a>
+         <a class="waves-effect waves-light btn" type="button" style="margin-left: 75%" (click) = "procurarMonstro()" [class.disabled] = "disablefugir">procurar_Monstro<i class="material-icons left">cloud</i></a>
+        
+
+        </div>
+        <div class="col l4 offset-l2 s12">
+        
+          <ul>
+           
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright" style="background-color:rgba(3, 90, 10, 0.952);">
+      <div class="container">
+      © 2018 Copyright Text
+      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      </div>
+    </div>
+  </footer>
+
+</div>  
